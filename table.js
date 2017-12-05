@@ -212,6 +212,7 @@ Table.prototype.initializeRound = function( changeDealer ) {
 		this.deck.shuffle();
 		this.headsUp = this.playersSittingInCount === 2;
 		this.biggestBet = 0;
+		this.oldBiggestBet = 0;
 		this.playersInHandCount = 0;
 
 		for( var i=0 ; i<this.public.seatsCount ; i++ ) {
