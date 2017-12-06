@@ -211,8 +211,8 @@ Table.prototype.initializeRound = function( changeDealer ) {
 		this.public.board = ['', '', '', '', ''];
 		this.deck.shuffle();
 		this.headsUp = this.playersSittingInCount === 2;
-		this.biggestBet = 0;
-		this.oldBiggestBet = 0;
+		this.public.biggestBet = 0;
+		this.public.oldBiggestBet = 0;
 		this.playersInHandCount = 0;
 
 		for( var i=0 ; i<this.public.seatsCount ; i++ ) {
@@ -273,7 +273,7 @@ Table.prototype.initializeSmallBlind = function() {
 };
 
 /**
- * Method that starts the "small blind" round
+ * Method that starts the "big blind" round
  */
 Table.prototype.initializeBigBlind = function() {
 	// Set the table phase to 'bigBlind'
@@ -287,8 +287,6 @@ Table.prototype.initializeBigBlind = function() {
 Table.prototype.initializePreflop = function() {
 	// Set the table phase to 'preflop'
 	this.public.phase = 'preflop';
-	this.biggestBet = 0;
-	this.oldBiggestBet = 0;
 	var currentPlayer = this.public.activeSeat;
 	// The player that placed the big blind is the last player to act for the round
 	this.lastPlayerToAct = this.public.activeSeat;
